@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "base_dashboard.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .centered-div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .centered-header {
+        text-align: center;
+        margin: 0 10px;
+    }
+    </style>
+    <title>Manage Appointments</title>
+</head>
+<body>    
+    <h1 class="centered-header">Manage Appointments:</h1>
+    <div class="centered-div">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Doctor</th>
+            <th>Nurse</th>
+            <th>Patient</th>
+            <th>Appointment Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.doctor }}</td>
+            <td>{{ appointment.nurse }}</td>
+            <td>{{ appointment.patient }}</td>
+            <td>{{ appointment.appointment_datetime }}</td>
+            <td>{{ appointment.status }}</td>
+            <td>
+                <a href="{% url 'edit_appointment' appointment.id %}">Edit</a> |
+                <a href="{% url 'delete_appointment' appointment.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+{% endblock %}
+</html>

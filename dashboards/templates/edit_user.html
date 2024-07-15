@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "base_dashboard.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Edit User</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save changes</button>
+</form>
+</body>
+{% endblock %}
+</html>
