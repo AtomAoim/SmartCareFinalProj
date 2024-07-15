@@ -23,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
 ### Installation
 
 1. Clone the repository:\
-   ````git clone https://github.com/your-username/Smart_Care_Django_Project.git````
+   ````git clone https://github.com/AtomaAoim/SmartCareFinalProj.git````
    
 2. Navigate to the project directory:\
 ````cd Smart_Care_Django_Project````
